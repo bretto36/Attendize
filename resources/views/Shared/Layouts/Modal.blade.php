@@ -1,6 +1,4 @@
-
-<!--Currently not using a modal layout a modals variation to much in content.-->
-
+<!--Currently not using a modal layout a modals variation too much in content.-->
 <div id="@yield('modal-id')" class="modal fade " style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">

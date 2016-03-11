@@ -1,6 +1,5 @@
 <html>
     <head>
-
         <title>@yield('title')</title>
 
         @include('Shared.Partials.GlobalMeta')
@@ -16,7 +15,6 @@
         <!--/Style-->
 
         <style>
-
             .panel {
                 background-color: #ffffff;
                 background-color: rgba(255,255,255,.95);
@@ -64,6 +62,6 @@
                 ], {duration: 3500, fade: 1000});
             });
         </script>
+        @include('Shared.Partials.GlobalFooterJS')
     </body>
-    @include('Shared.Partials.GlobalFooterJS')
 </html>

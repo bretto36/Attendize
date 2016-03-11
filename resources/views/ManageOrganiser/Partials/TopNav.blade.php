@@ -9,11 +9,10 @@
     </li>
     <!--/ Show Side Menu -->
     <li class="nav-button">
-        <a target="__blank" href="{{$organiser->event_url}}">
+        <a target="__blank" href="{{$organiser->getOrganiserUrlAttribute()}}">
             <span>
                 <i class="ico-eye2"></i> &nbsp;<hide class="hidden-xs">View </hide>Organiser Page
             </span>
-
         </a>
     </li>
 </ul>

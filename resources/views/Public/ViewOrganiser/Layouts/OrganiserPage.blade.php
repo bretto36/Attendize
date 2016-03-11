@@ -33,7 +33,6 @@
 
        {!!HTML::style('assets/stylesheet/frontend.css')!!}
 
-
     </head>
     <body class="attendize">
         <div id="organiser_page_wrap">
@@ -52,4 +51,5 @@
         </script>
 
         @include('Shared.Partials.GlobalFooterJS')
+    </body>
 </html>

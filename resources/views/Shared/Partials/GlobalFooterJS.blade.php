@@ -17,5 +17,4 @@
     ga('create', '{{env('GOOGLE_ANALYTICS_ID')}}', 'auto');
     ga('require', 'displayfeatures');
     ga('send', 'pageview');
-
 </script>
