@@ -81,6 +81,23 @@ class EventTicketsController extends MyBaseController
     }
 
     /**
+     * Show the delete ticket modal
+     *
+     * @param $event_id
+     * @param $ticket_id
+     * @return mixed
+     */
+    public function showDeleteTicket($event_id, $ticket_id)
+    {
+        $data = [
+            'event'  => Event::scope()->find($event_id),
+            'ticket' => Ticket::scope()->find($ticket_id),
+        ];
+
+        return view('ManageEvent.Modals.DeleteTicket', $data);
+    }
+
+    /**
      * Creates a ticket
      *
      * @param $event_id
@@ -160,10 +177,8 @@ class EventTicketsController extends MyBaseController
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postDeleteTicket(Request $request)
+    public function postDeleteTicket($event_id, $ticket_id)
     {
-        $ticket_id = $request->get('ticket_id');
-
         $ticket = Ticket::scope()->find($ticket_id);
 
         /*

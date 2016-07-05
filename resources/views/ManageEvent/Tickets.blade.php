@@ -115,19 +115,19 @@
                     <div id="ticket_{{$ticket->id}}" class="col-md-4 col-sm-6 col-xs-12 ">
                         <div class="panel panel-success ticket">
 
-                            <div style="cursor: pointer;" data-modal-id='ticket-{{ $ticket->id }}'
+                            <div style="cursor: pointer;" data-modal-id="ticket-{{ $ticket->id }}" data-target="edit-ticket"
                                  data-href="{{ route('showEditTicket', ['event_id' => $event->id, 'ticket_id' => $ticket->id]) }}"
                                  class="panel-heading loadModal">
-                                <h3 class="panel-title">
-                                    <i class="ico-ticket ticket_icon mr5 ellipsis"></i>
+                                <h3 class="panel-title mr5">
+                                    <i class="ico-ticket ticket_icon ellipsis"></i>
                                     {{$ticket->title}}
                                     <span class="pull-right">
-                        {{ ($ticket->is_free) ? "FREE" : money($ticket->price, $event->currency->code) }}
-                    </span>
+                                        {{ ($ticket->is_free) ? "FREE" : money($ticket->price, $event->currency->code) }}
+                                    </span>
                                 </h3>
                             </div>
 
-                            <div class='panel-body'>
+                            <div class="panel-body">
                                 <ul class="nav nav-section nav-justified mt5 mb5">
                                     <li>
                                         <div class="section">
@@ -168,15 +168,15 @@
                                                     <span class="pauseTicketSales label label-info"
                                                           data-id="{{$ticket->id}}"
                                                           data-route="{{route('postPauseTicket', ['event_id'=>$event->id])}}">
-                                    <i class="ico-play4"></i> Resume
-                                </span>
+                                                        <i class="ico-play4"></i> Resume
+                                                    </span>
                                                 @else
                                                     On Sale &nbsp;
                                                     <span class="pauseTicketSales label label-info"
                                                           data-id="{{$ticket->id}}"
                                                           data-route="{{route('postPauseTicket', ['event_id'=>$event->id])}}">
-                                    <i class="ico-pause"></i> Pause
-                                </span>
+                                                        <i class="ico-pause"></i> Pause
+                                                    </span>
                                                 @endif
                                             @else
                                                 {{\App\Models\TicketStatus::find($ticket->sale_status)->name}}
@@ -196,7 +196,6 @@
                 @else
                     @include('ManageEvent.Partials.TicketsBlankSlate')
                 @endif
-
 
             @endif
         </div><!--/ end ticket table-->

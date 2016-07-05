@@ -350,13 +350,17 @@ Route::group(['middleware' => ['auth', 'first.run']], function () {
             'as'   => 'postCreateTicket',
             'uses' => 'EventTicketsController@postCreateTicket',
         ]);
-        Route::post('{event_id}/tickets/delete', [
-            'as'   => 'postDeleteTicket',
-            'uses' => 'EventTicketsController@postDeleteTicket',
-        ]);
         Route::post('{event_id}/tickets/pause', [
             'as'   => 'postPauseTicket',
             'uses' => 'EventTicketsController@postPauseTicket',
+        ]);
+        Route::get('{event_id}/tickets/delete/{ticket_id}', [
+            'as'   => 'showDeleteTicket',
+            'uses' => 'EventTicketsController@showDeleteTicket',
+        ]);
+        Route::post('{event_id}/tickets/delete/{ticket_id}', [
+            'as'   => 'postDeleteTicket',
+            'uses' => 'EventTicketsController@postDeleteTicket',
         ]);
 
         /*
